@@ -1,0 +1,125 @@
+﻿show DATABASES;
+
+-- 创建实训的数据库
+create database shixun DEFAULT CHARACTER SET UTF8;
+
+use shixun;
+
+-- 创建 Catalog 表
+CREATE table catalog(
+id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(20),
+description VARCHAR(40)
+);
+
+show tables;
+
+select * from catalog;
+
+-- 创建 News 表
+CREATE table news(
+id INT PRIMARY KEY AUTO_INCREMENT,
+title VARCHAR(20),
+content VARCHAR(200),
+author varchar(10),
+publishedtime datetime,
+source VARCHAR(20),
+catalogId int
+);
+
+-- select * from news;
+
+-- select n.id,title,content,publishedtime,catalogId,name from news n,catalog c where n.catalogId = c.id  order by catalogId;
+
+-- select n.id,title,n.content,publishedtime,catalogId,name from news n,catalog c where c.id = 2 and n.catalogId = c.id  order by catalogId;
+
+-- 创建 Reply 表
+CREATE table reply(
+id INT PRIMARY KEY AUTO_INCREMENT,
+content varchar(30),
+author varchar(10),
+publishedtime datetime,
+newsId int
+);
+
+-- select * from reply;
+
+-- select n.id,n.title,n.author,n.publishedtime,n.source,n.content,r.content,r.author,r.publishedtime from news n,reply r where n.id = 1 and n.id = r.newsId 
+
+
+-- select * from reply where newsId = 2
+
+-- select * from news where id = 1;
+
+-- insert into reply values (null,'你好，世界','王五','2018-05-01 10:01:12',2)
+
+-- 隔开
+-- select * from news n, catalog c  where  c.id = (select catalogId from news where title like '%1%');
+
+-- select * from news where content like "%1%";
+
+-- select * from news n,catalog c where title like "%1%" and n.catalogId = c.id ORDER BY n.catalogId;
+
+use shixun;
+
+-- 创建 User 表
+create table user(
+id INT PRIMARY KEY AUTO_INCREMENT,
+username varchar(30),
+password varchar(30)
+);
+
+-- select * from user;
+
+-- select password from user where username = "admin";
+
+-- select * from catalog where id = 1;
+
+-- update catalog set name="类别5 测试",description = "类别5：测试" where id = 5
+
+-- select * from catalog;
+-- select * from user;
+-- select * from news;
+-- select * from reply;
+
+-- delete from reply where newsId = (select id from news where news.catalogId = (select id from catalog where id = 7))
+-- delete from news where catalogId = (select id from catalog where id = 7);
+-- delete from catalog where id = 7
+
+-- insert into catalog value(null,"","")
+
+-- insert into news value(null,"","","","","",1)
+
+
+
+-- update news set title="hhaha",content="测试",author="测试作者",source="出版社",catalogId="2" where id = 25
+
+-- use shixun;
+
+-- select count(*) from news 
+
+-- select * from news LIMIT 5,1
+
+-- select n.id,title,content,publishedtime,catalogId,name from news n,catalog c where n.catalogId = c.id  order by catalogId
+
+-- select id,title,publishedtime from news LIMIT 0,5
+
+-- use shixun;
+
+-- select count(*) from catalog;
+
+-- select * from catalog LIMIT 0,5
+
+
+-- SELECT * from reply;
+-- delete from reply where newsId = (select id from news where news.catalogId = (select id from catalog where id = 120))
+-- select * from news;
+
+-- select * from catalog;
+
+
+-- select * from news  where catalogId = 1 LIMIT 0,5
+
+-- select count(*) from news where catalogId = 1;
+
+-- select n.id,n.title,n.content,n.publishedtime,n.catalogId,c.name from news n,catalog c where n.catalogId = 2 and n.catalogId = c.id  LIMIT 0,5

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!--解决全局乱码的过滤器-->
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>com.wzg.shixun.web.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    <!--权限管理-->
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.wzg.shixun.web.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/Manager/*</url-pattern>
+    </filter-mapping>
+
+
+    <!--添加评论的servlet-->
+    <servlet>
+        <servlet-name>CommentServlet</servlet-name>
+        <servlet-class>com.wzg.shixun.web.servlet.CommentServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CommentServlet</servlet-name>
+        <url-pattern>/CommentServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--添加搜索的servlet-->
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>com.wzg.shixun.web.servlet.SearchServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/SearchServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--用户登录的 Servlet-->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.wzg.shixun.web.servlet.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--Catalog 信息修改的 Servlet-->
+    <servlet>
+        <servlet-name>ModifyCatalogServlet</servlet-name>
+        <servlet-class>com.wzg.shixun.web.servlet.ModifyCatalogServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ModifyCatalogServlet</servlet-name>
+        <url-pattern>/ModifyCatalogServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--添加 Catalog 的 Servlet-->
+    <servlet>
+        <servlet-name>AddCatalogServlet</servlet-name>
+        <servlet-class>com.wzg.shixun.web.servlet.AddCatalogServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddCatalogServlet</servlet-name>
+        <url-pattern>/AddCatalogServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--添加 News 的 servlet-->
+    <servlet>
+        <servlet-name>AddNewsServlet</servlet-name>
+        <servlet-class>com.wzg.shixun.web.servlet.AddNewsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddNewsServlet</servlet-name>
+        <url-pattern>/AddNewsServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--更新 News 的 servlet-->
+    <servlet>
+        <servlet-name>UpdateNewsServlet</servlet-name>
+        <servlet-class>com.wzg.shixun.web.servlet.UpdateNewsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateNewsServlet</servlet-name>
+        <url-pattern>/UpdateNewsServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!--退出 的 servlet-->
+    <servlet>
+        <servlet-name>SingOutServlet</servlet-name>
+        <servlet-class>com.wzg.shixun.web.servlet.SingOutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SingOutServlet</servlet-name>
+        <url-pattern>/SingOutServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
