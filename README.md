@@ -86,21 +86,4 @@ IDEA + MySql + Tomcat8.5
 
 修改新闻
 ![](https://i.imgur.com/mT6jvUH.png)
-
----
-
-## END
-
-除了本项目，你还可以通过文章提高自己的能力。
-* [作者的掘金](https://juejin.im/user/5aa39855f265da239611fec2)
-* [作者的简书](https://www.jianshu.com/u/22fcc87d6e5d)
-
-如果本项目对你有帮助，请作者喝杯咖啡吧！
-
-* 支付宝
-![](https://i.imgur.com/5liur0U.png)
-
-* 微信
-![](https://i.imgur.com/suW7chN.png)
-
 ---
